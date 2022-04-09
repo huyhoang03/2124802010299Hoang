@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/thongbao.css">
+    <script src="javascript/style.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="css/style.css">
+    <script src="javascript/thongbao.js"></script>
+    <title>Trang thông báo</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/đâutrang.jpg" alt="logo">
+        </div>
+        <div class="text">
+            <p>HOANGSHOP</p>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="hangbanchay.html">HÀNG BÁN CHẠY</a></li>
+            <li><a href="https://shopee.vn/web">TẢI ỨNG DỤNG</a></li>
+            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            <li><i class="fa-solid fa-user"></i> <a href="dangnhap.html">Đăng nhập</a></li>
+            <li><i class="fa-solid fa-bell"></i> <a href="#">Thông báo</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="container">
+            <img id="anh" src="images/0.jpg" alt="hinhanh">
+            <div class="btn-container">
+                <center>
+                    <button onclick="first()"> << </button>
+                    <button onclick="prev()"> < </button>
+                    <button onclick="next()"> > </button>
+                    <button onclick="last()"> >> </button>
+                </center>
+            </div>
+        </div>
+        <div class="dathang">
+            <div class="container1">
+                <center>
+                    <select onchange="doimucgia()" id="mucgia" >
+                        <option value="-1">Chọn mức giá</option>
+                        <option value="200">Đến 200</option>
+                        <option value="400">Đến 400</option>
+                        <option value="600">Đến 600</option>
+                        <option value="800">Đến 800</option>
+                    </select>
+                </center>
+            </div>
+            <table border="1" id="table_SP">
+                <tr>
+                    <th colspan="2">Hàng Hóa</th>
+                    <th>Đơn Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Thành Tiền</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(0)" name="chọn"></td>
+                    <td>Áo Hoodie</td>
+                    <td name="gia">700</td>
+                    <td><input onkeyup="thanhtien(this)" name="soluong" value="0" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(1)" name="chọn"></td>
+                    <td>Áo thun</td>
+                    <td name="gia">400</td>
+                    <td><input onkeyup="thanhtien(this)" name="soluong" value="0" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(2)" name="chon"></td>
+                    <td>Áo Khoác Gió</td>
+                    <td name="gia">100</td>
+                    <td><input onkeyup="thanhtien(this)" value="0" name="soluong" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(3)" name="chon"></td>
+                    <td>Áo 2hend</td>
+                    <td name="gia">450</td>
+                    <td><input onkeyup="thanhtien(this)" value="0" name="soluong" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(4)" name="chon"></td>
+                    <td>Hàng khuyến mãi</td>
+                    <td name="gia">180</td>
+                    <td><input onkeyup="thanhtien(this)" value="0" name="soluong" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(5)" name="chon"></td>
+                    <td>Áo Sale</td>
+                    <td name="gia">600</td>
+                    <td><input onkeyup="thanhtien(this)" value="0" name="soluong" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="tich1checkbox(6)" name="chon"></td>
+                    <td>Hàng new</td>
+                    <td name="gia">90</td>
+                    <td><input onkeyup="thanhtien(this)" value="0" name="soluong" disabled></td>
+                    <td name="thanhtien"></td>
+                </tr>
+                <tr class="tong" >
+                    <th colspan="4">TỔNG</th>
+                    <td id="tinhtong">580</td>
+                </tr>
+            </table>
+            <a href="hinhthucvanchuyen.html">
+                <button>Thanh toán</button>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <div class="khachhang">
+                <h4>Chăm sóc khách hàng</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">trung tâm trợ giúp</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Blog</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Mail</a>
+                </li>
+                <li>
+                    <a href="#">Hưỡng Dẫn Mua Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Hưỡng Dấn Bán Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Thanh Toán</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Xu</a>
+                </li>
+                <li>
+                    <a href="#">Trả Hàng & Hoàn Tiền</a>
+                </li>
+                <li>
+                    <a href="#">Chăm Sóc Khách Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Chính Sách bảo Hành</a>
+                </li>
+            </ul>
+        </div>
+        <div class="left-center">
+            <div class="vekhachhang">
+                <h4>VỀ SHOPEE</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Giới Thiệu Về Shopee Việt Nam</a>
+                </li>
+                <li>
+                    <a href="#">Tuyển Dụng</a>
+                </li><li>
+                    <a href="#">Điều Khoản Shopee</a>
+                </li>
+                <li>
+                    <a href="#">Chính sách bảo mật</a>
+                </li>
+                <li>
+                    <a href="#">Kênh Người bán</a>
+                </li>
+                <li>
+                    <a href="#">Flash Sales</a>
+                </li>
+                <li>
+                    <a href="#">Chương trình tiếp thị liên kết Shopee</a>
+                </li>
+                <li>
+                    <a href="#">Liên Hệ Với Truyền Thông</a>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="thanhtoan">
+                <h4>THANH TOÁN</h4>
+                <div class="hinh1">
+                    <img src="img/logo-1.jpg" alt="hinh1">
+                </div>
+            </div>
+            <div class="donvi">
+                <h4>ĐƠN VỊ VẬN CHUYỂN</h4>
+                <div class="hinh2">
+                    <img src="img/logo-2.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="center-right">
+            <div class="theodoi">
+                <h4>THEO DÕI CHÚNG TÔI</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram-square"></i> instagram</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> Linkedld</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="taiungdung">
+                <h4>TAI ỨNG DỤNG SHOPEE NGAY THÔI</h4>
+            </div>
+            <ul>
+                <li> <a href="#"><i class="fa-brands fa-apple"></i> App Store</a></li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-google-play"></i>Google Play</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="footer2">
+        <table>
+            <tr>
+                <td>
+                    <p>© 2022 Shopee. Tất cả các quyền được bảo lưu.</p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><td>
+                    <p>Quốc gia & Khu vực:
+                        Singapore |
+                        Indonesia |
+                        Đài Loan |
+                        Thái Lan |
+                        Malaysia |
+                        Việt Nam |
+                        Philippines |
+                        Brazil |
+                        México |
+                        Colombia |
+                        Chile |
+                        Poland |
+                        Spain |
+                        France |
+                        India |
+                        Argentina</p>
+                </td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="cuoitrang">
+        <div class="chinhsach">
+            <ul>
+                <li>CHÍNH SÁCH BẢO MẬT</li>
+                <li>QUY CHẾ HOẠT DỘNG</li>
+                <li>CHÍNH SÁCH VẬN CHUYỂN</li>
+                <li>CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</li>
+            </ul>
+        </div>
+
+        <div class="hieunang">
+            <ul>
+                <li>
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=18375">
+                        <img src="img/thongbaocongthuong.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=18375">
+                        <img src="img/thongbaocongthuong.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="ketthuc">
+        <p>Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
+            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)
+            Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
+            © 2015 - Bản quyền thuộc về Công ty TNHH Shopee</p>
+    </div>
+</body>
+</html>

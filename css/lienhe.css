@@ -1,0 +1,182 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightsalmon;
+}
+.logo > img{
+    width: 100px;
+    padding-top: 5px;
+}
+.text > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding-top: 30px;
+    text-shadow: 3px 3px lightcoral;
+    animation: doimauchu ease 2s infinite;
+}
+@keyframes doimauchu {
+    from {color: aqua;}
+    to { color: rgb(173, 135, 222);}
+}
+/* NAV CHO TRANG */
+.nav{
+    background-color: lightsalmon;
+    padding: 11px 15px;
+}
+.nav ul{
+    display: flex;
+    /* justify-content: space-around; */
+}
+.nav ul li{
+    list-style: none;
+    border-right: 3px solid  ;
+}
+.nav ul li:nth-child(4){
+    border-right: none;
+}
+.nav ul li:nth-child(5){
+    margin-left: auto;
+}
+.nav ul li:nth-child(6){
+    border-right: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    padding: 0 15px;
+    
+}
+.nav ul li a:hover{
+    color: red;
+    background-color: black;
+    padding: 11px 15px;
+}
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.footer2{
+    width: 80%;
+    display: flex;
+    margin: 0  auto;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}
+/* STYLE CHUNG */
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+ul li{
+    list-style: none;
+}
+.chinhsach{
+    margin-top: 50px;
+}
+.chinhsach ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.hieunang{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.hieunang ul{
+    display: flex;
+    justify-content: space-around;
+}
+.hieunang ul li a >img{
+    width: 200px;
+}
+.chinhsach ul li{
+    border-right: 2px solid;
+    padding: 0 15px;
+}
+.ketthuc{
+    margin-top: 20px;
+    height: 70px;
+    width: 80%;
+    margin:  0 auto;
+}
+.ketthuc p{
+    text-align: center;
+}
+/* calendar */
+.section{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid;
+    border-radius: 5px;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+/* CALENDAR TÙY CHỈNH LỊCH VẠN LIÊN */
+.calendar{
+    border: 5px solid lightsalmon;
+    background-origin: 4px;
+    margin-bottom :10px;
+}
+.calendar table{
+    width: 100%;
+}
+.calendar table tr td.monthyear{
+    background-color: #f60;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #666;
+}
+.calendar table tr.weekitle td{
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #666;
+    background-color: #ccf;
+}
+.calendar table tr td.weekday{
+    text-align: center;
+    border: 1px solid #666;
+    
+}
+.lienhe a{
+    text-decoration: none;
+}
+.phananh{
+    background-color: lightsalmon;
+    font-size: 20px;
+}
+.phananh legend{
+    font-size: 25px;
+    font-weight: bold;
+    color: lightyellow;
+    text-shadow: 3px 1px black;
+}
+.phananh fieldset{
+    border: 5px solid black;
+}
+input[type=text]{
+    border: 3px solid;
+    border-radius: 3px;
+    width: 200px;
+    height: 40px;
+}
+input[type=submit]{
+    border: 3px solid;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+}
+textarea{
+    border: 3px solid;
+    border-radius: 3px;
+}

@@ -1,0 +1,234 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightsalmon;
+    padding: auto;
+    margin: auto
+    
+}
+.logo > img{
+    width: 100px;
+    padding-top: 5px;
+}
+.text > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding-top: 30px;
+    text-shadow: 3px 3px lightcoral;
+    animation: doimauchu ease 2s infinite;
+}
+@keyframes doimauchu {
+    from {color: aqua;}
+    to { color: rgb(173, 135, 222);}
+}
+/* NAV CHO TRANG */
+.nav{
+    background-color: lightsalmon;
+    padding: 11px 15px;
+}
+.nav ul{
+    display: flex;
+    /* justify-content: space-around; */
+}
+.nav ul li{
+    list-style: none;
+    border-right: 3px solid  ;
+}
+.nav ul li:nth-child(4){
+    border-right: none;
+}
+.nav ul li:nth-child(5){
+    margin-left: auto;
+}
+.nav ul li:nth-child(6){
+    border-right: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    padding: 0 15px;
+    
+}
+.nav ul li a:hover{
+    color: red;
+    background-color: black;
+    padding: 11px 15px;
+}
+/* ACTICEl */
+.acticel{
+    display: flex;
+    justify-content: space-around;
+}
+.aside-left{
+    border: 5px solid lightsalmon;
+    border-radius: 2px;
+}
+.aside-left > h1{
+    font-size: 16px;
+}
+.aside-right{
+    border: 5px solid lightsalmon;
+    border-radius: 2px;
+    width: 250px;
+}
+.aside-right > h1{
+    font-size: 16px;
+}
+.section{
+    display: flex;
+    width: 80%;
+    overflow: auto;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.sanpham{
+    border: 2px solid lightsalmon;
+    width: 24%;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+
+    box-shadow: 2px 3px 2px black;
+    text-align: center;
+}
+.sanpham > img{
+    width: 100%;
+}
+.sanpham h3{
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+/* hieu ung khi cham vo anh */
+.sanpham >img:hover{
+    transform: scale(1.2);
+}
+input[type=button]{
+    border-radius: 5px;
+    border: 3px solid black;
+    width: 100px;
+    height: 30px;
+}
+input[type=button]:hover{
+    background-color: darkgrey;
+    color: aqua;
+}
+/* FOOTER */
+.footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.footer2{
+    width: 80%;
+    display: flex;
+    margin: 0  auto;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}
+/* STYLE CHUNG */
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+ul li{
+    list-style: none;
+}
+.chinhsach{
+    margin-top: 50px;
+}
+.chinhsach ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.hieunang{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.hieunang ul{
+    display: flex;
+    justify-content: space-around;
+}
+.hieunang ul li a >img{
+    width: 200px;
+}
+.chinhsach ul li{
+    border-right: 2px solid;
+    padding: 0 15px;
+}
+.ketthuc{
+    margin-top: 20px;
+    height: 70px;
+    width: 80%;
+    margin:  0 auto;
+}
+.ketthuc p{
+    text-align: center;
+}
+/* chình chuyển hình slide */
+.chuyenhinh{
+    margin-left: 100px;
+    width: 89%;
+}
+.slide-pager{
+    position: relative;
+}
+.slide-control-prev{
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    height: 60px;
+    background: #f90;
+    line-height: 60px;
+    color: #fff;
+    cursor: pointer;
+    top: 120px;
+    left: -34px;
+    z-index: 1000;
+}
+
+.slide-control-next{
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    height: 60px;
+    background: #f90;
+    line-height: 60px;
+    color: #fff;
+    cursor: pointer;
+    right: 34px;
+    top: 102px;
+    z-index: 1000;
+}
+
+.slide-container{
+    height: 255px;
+    width: 92%;
+    overflow: scroll;
+    position: relative;
+}
+
+.slide-stage{
+    position: absolute;
+    display: flex;
+}
+
+.slide-image{
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+
+.slide-image img{
+    width: 180px;
+    height: 230px;
+    margin: 0 auto;
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/lienhe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="css/style.css">
+    <title>Trang đăng nhập</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/đâutrang.jpg" alt="logo">
+            
+        </div>
+        <div class="text">
+            <p>HOANGSHOP</p>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="hangbanchay.html">HÀNG BÁN CHẠY</a></li>
+            <li><a href="https://shopee.vn/web">TẢI ỨNG DỤNG</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+            <li><i class="fa-solid fa-user"></i> <a href="dangnhap.html">Đăng nhập</a></li>
+            <li><i class="fa-solid fa-bell"></i> <a href="thongbao.html">Thông báo</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="calendar">
+            <script lang="JavaScript">
+                monthnames = new Array("January","Februrary","March","April","May","July","August","September","October","November","December");
+
+                var linkcount=0;
+
+                function addlink(month, day, href){
+                    var entry = new Array(3);
+                    entry[0] = month;
+                    entry[1] = day;
+                    entry[2] = href;
+                    this[linkcount++] = entry;
+                }
+                Array.prototype.addlink = addlink;
+                linkdays = new Array();
+                monthdays = new Array(12);
+                monthdays[0] = 31;
+                monthdays[1] = 28;
+                monthdays[2] = 31;
+                monthdays[3] = 30;
+                monthdays[4] = 31;
+                monthdays[5] = 30;
+                monthdays[6] = 31;
+                monthdays[7] = 31;
+                monthdays[8] = 30;
+                monthdays[9] = 31;
+                monthdays[10] = 30;
+                monthdays[11] = 31;
+                todayDte=new Date();
+                thisday=todayDte.getDay();
+                thismonth=todayDte.getMonth();
+                thisdate=todayDte.getDate();
+                thisyear=todayDte.getYear();
+                thisyear = thisyear % 100;
+                thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+                if(((thisyear % 4 == 0) && !(thisyear % 100 == 0)) || (thisyear % 400 == 0)) monthdays[1]++;
+                startspaces=thisdate;
+                while(startspaces > 7) startspaces-=7;
+                startspaces = thisday - startspaces + 1;
+                if(startspaces < 0) startspaces+=7;
+                document.write("<table>");
+                document.write("<tr><td colspan=7 class='monthyear'>" + monthnames[thismonth] + " " + thisyear+"</td></tr>");
+                document.write("<tr class='weektitle'>");
+                document.write("<td align=center>Sun</td>");
+                document.write("<td align=center>Mon</td>");
+                document.write("<td align=center>Tus</td>");
+                document.write("<td align=center>Web</td>");
+                document.write("<td align=center>Thu</td>");
+                document.write("<td align=center>Fri</td>");
+                document.write("<td align=center>Sat</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                    for(s=0;s<startspaces;s++){
+                        document.write("<td> </td>");
+                    }
+                    count=1;
+                    while(count <= monthdays[thismonth]){
+                        for(b = startspaces;b<7;b++){
+                            linktrue=false;
+                            document.write("<td class='weekday'>");
+                            for(c=0;c<linkdays.length;c++){
+                                if(linkdays[c] != null){
+                                    if((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)){
+                                        document.write("<a href=\"" + linkdays[c][2] + "\">");
+                                            linktrue=true;
+                                    }
+                                }
+                            }
+                            if(count==thisdate){
+                                document.write("<font color='FF0000'><strong>");
+                            }
+                            if(count <= monthdays[thismonth]){
+                                document.write(count);
+                            }
+                            else{
+                                document.write(" ");
+                            }
+                            if (count==thisdate){
+                                document.write("</strong></font>");
+                            }
+                            if(linktrue)
+                            document.write("</a>");
+                            document.write("</td>")
+                            count++;
+                        }
+                        document.write("</tr>");
+                        document.write("<tr>");
+                        startspaces=0;
+                    }
+                    document.write("</table>");
+            </script>
+        </div>   
+        <div class="phananh">
+            <form action="10122003hoang@gmail.com">
+                <fieldset>
+                    <legend>Đánh giá sản phẩm của shop</legend>
+                    <table>
+                        <tr>
+                            <td>Họ Tên Khách hàng</td>
+                            <td>
+                                <input type="text" name="txtHoTen" placeholder="nhập họ tên">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mức độ sản phẩm</td>
+                            <td>
+                                <input type="radio" name="danhgia">Rất hài lòng
+                                <input type="radio" name="danhgia"> Hài lòng
+                                <input type="radio" name="danhgia"> Không hài lòng
+                                <input type="radio" name="danhgia"> Rất khônghài lòng
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                            <td>
+                                Nội dung phản ánh
+                            </td>
+                            <td>
+                                <textarea name="coment" cols="50" rows="10"></textarea>
+                                <input type="submit" value="Gửi">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+        <div class="lienhe">
+            <p>
+                <a href="https://www.facebook.com/king.hoangz">
+                    <i class="fa-brands fa-facebook"></i>
+                    Liên hệ qua facebook cá nhân.</a> 
+            </p>
+            <p>
+                <a href="2124802010299@student.tdmu.edu.nv">
+                    <i class="fa-solid fa-envelope"></i>
+                    Hộp thư cá nhân
+                </a>
+            </p>
+            <p>
+                STĐ : 0918555490.
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <div class="khachhang">
+                <h4>Chăm sóc khách hàng</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">trung tâm trợ giúp</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Blog</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Mail</a>
+                </li>
+                <li>
+                    <a href="#">Hưỡng Dẫn Mua Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Hưỡng Dấn Bán Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Thanh Toán</a>
+                </li>
+                <li>
+                    <a href="#">Shopee Xu</a>
+                </li>
+                <li>
+                    <a href="#">Trả Hàng & Hoàn Tiền</a>
+                </li>
+                <li>
+                    <a href="#">Chăm Sóc Khách Hàng</a>
+                </li>
+                <li>
+                    <a href="#">Chính Sách bảo Hành</a>
+                </li>
+            </ul>
+        </div>
+        <div class="left-center">
+            <div class="vekhachhang">
+                <h4>VỀ SHOPEE</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Giới Thiệu Về Shopee Việt Nam</a>
+                </li>
+                <li>
+                    <a href="#">Tuyển Dụng</a>
+                </li><li>
+                    <a href="#">Điều Khoản Shopee</a>
+                </li>
+                <li>
+                    <a href="#">Chính sách bảo mật</a>
+                </li>
+                <li>
+                    <a href="#">Kênh Người bán</a>
+                </li>
+                <li>
+                    <a href="#">Flash Sales</a>
+                </li>
+                <li>
+                    <a href="#">Chương trình tiếp thị liên kết Shopee</a>
+                </li>
+                <li>
+                    <a href="#">Liên Hệ Với Truyền Thông</a>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="thanhtoan">
+                <h4>THANH TOÁN</h4>
+                <div class="hinh1">
+                    <img src="img/logo-1.jpg" alt="hinh1">
+                </div>
+            </div>
+            <div class="donvi">
+                <h4>ĐƠN VỊ VẬN CHUYỂN</h4>
+                <div class="hinh2">
+                    <img src="img/logo-2.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="center-right">
+            <div class="theodoi">
+                <h4>THEO DÕI CHÚNG TÔI</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram-square"></i> instagram</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> Linkedld</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="taiungdung">
+                <h4>TAI ỨNG DỤNG SHOPEE NGAY THÔI</h4>
+            </div>
+            <ul>
+                <li> <a href="#"><i class="fa-brands fa-apple"></i> App Store</a></li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-google-play"></i>Google Play</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="footer2">
+        <table>
+            <tr>
+                <td>
+                    <p>© 2022 Shopee. Tất cả các quyền được bảo lưu.</p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><td>
+                    <p>Quốc gia & Khu vực:
+                        Singapore |
+                        Indonesia |
+                        Đài Loan |
+                        Thái Lan |
+                        Malaysia |
+                        Việt Nam |
+                        Philippines |
+                        Brazil |
+                        México |
+                        Colombia |
+                        Chile |
+                        Poland |
+                        Spain |
+                        France |
+                        India |
+                        Argentina</p>
+                </td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="cuoitrang">
+        <div class="chinhsach">
+            <ul>
+                <li>CHÍNH SÁCH BẢO MẬT</li>
+                <li>QUY CHẾ HOẠT DỘNG</li>
+                <li>CHÍNH SÁCH VẬN CHUYỂN</li>
+                <li>CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</li>
+            </ul>
+        </div>
+
+        <div class="hieunang">
+            <ul>
+                <li>
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=18375">
+                        <img src="img/thongbaocongthuong.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=18375">
+                        <img src="img/thongbaocongthuong.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="ketthuc">
+        <p>Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
+            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)
+            Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
+            © 2015 - Bản quyền thuộc về Công ty TNHH Shopee</p>
+    </div>
+</body>
+</html>
